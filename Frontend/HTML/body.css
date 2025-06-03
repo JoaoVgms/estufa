@@ -1,0 +1,304 @@
+.page_container
+{
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+.box
+{
+    padding: 1rem;
+    height: 22.5rem;
+    width: 40rem;
+    margin: 0.5rem;
+    background-color: #d0e9c0;
+    border-radius: 1rem;
+}
+#upper_middle
+{
+    width: 48rem;
+}
+#upper_right
+{
+    justify-content: center;
+    align-content: space-between;
+    width: 37.5rem;
+    background-color: white;
+    display: inline-block;
+}
+
+/* UPPER LEFT */
+#upper_left
+{
+    
+    display: inline-grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#upper_left_interact
+{
+    display: flex;
+    justify-content: center;
+}
+#div_helice
+{
+    margin-inline: 5rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: #9dcd88;
+    display: flex;
+    justify-content: center;
+}
+#helice
+{
+    height:120px;
+}
+#helice.on
+{
+    transition : -webkit-filter 0.5s;
+    filter: invert(1);
+}
+#helice.off{
+    transition : -webkit-filter 0.5s;
+    filter: invert(0);
+}
+
+.button
+{
+    font-size: 15px;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 2rem;
+    margin-inline: 1rem;
+    border: none;
+    background-color: #9dcd88;
+    transition: all 200ms;
+}
+.button:hover
+{
+    color: white;
+    cursor: pointer;
+    filter: brightness(80%);
+}
+#button_desliga
+{
+    background-color: #cd8888;
+}
+
+/* UPPER MIDDLE */
+#upper_middle
+{
+    padding: 1rem;
+    text-align: center;
+    display: inline-grid;
+    justify-content: center;
+}
+#upper_middle_image
+{
+    margin: 1rem;
+    background-color: #9dcd88;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+#servo
+{
+    transform: scaleX(-1);
+    height: 245px;
+    filter: brightness(0);
+}
+#servo.on{
+    transition : -webkit-filter 0.5s;
+    filter: invert(1);
+}
+#servo.off
+{
+    transition : -webkit-filter 0.5s;
+    filter: invert(0);
+}
+
+/* UPPER RIGHT */
+#upper_right
+{
+    padding: 0;
+    padding-top: 1rem;
+}
+.temperatura
+{
+    margin-top: -1rem;
+    display: inline-grid;
+    align-items: end;
+    padding: 1rem;
+    width: 35.5rem;
+    height: 9.75rem;
+    background-color: #d0e9c0;
+    border-radius: 1rem;
+    justify-content: center;
+}
+#temperatura_externa
+{
+    margin-top: 1rem;
+}
+#temperatura_valor
+{
+    background-color: #9dcd88;
+    padding: 0.5rem;
+    margin-inline: 6rem;
+    text-align: center;
+    font-size: 45px;
+    border-radius: 1rem;
+}
+.upper_right_title
+{
+    text-align: center;
+}
+
+/* LOWER LEFT */
+
+#lower_left
+{
+    width: 50rem;
+    display: flex;
+}
+#lower_left_right
+{
+    width: 20rem;
+    display: inline-grid;
+    justify-content: center;
+    background-color: #9dcd88;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+#water_level_text
+{
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#water_level_info
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#water_level_percentage
+{
+    margin: 1.5rem;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: green;
+}
+
+#lower_left_left
+{
+    align-content: center;
+    margin-left: 1.75rem;
+    width: 20rem;
+    display: inline-grid;
+    justify-content: center;
+    background-color: #9dcd88;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* LOWER MIDDLE */
+
+#lower_middle
+{
+    
+    display: inline-grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#lower_middle_interact
+{
+    display: flex;
+    justify-content: center;
+}
+#div_illumination
+{
+    margin-inline: 5rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: #9dcd88;
+    display: flex;
+    justify-content: center;
+}
+#lampada
+{
+    height: 130px;
+}
+#lampada.on{
+    transition : -webkit-filter 0.5s;
+    filter: invert(1);
+}
+#lampada.off
+{
+    transition : -webkit-filter 0.5s;
+    filter: invert(0);
+}
+
+/* LOWER RIGHT */
+#lower_right
+{
+    width: 40rem;
+    display: flex;
+    justify-content: space-between;
+}
+#lower_right_left
+{
+    width: 20rem;
+    display: inline-grid;
+    justify-content: center;
+    background-color: #9dcd88;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+#lower_right_right
+{
+    align-content: center;
+    margin-left: 1.75rem;
+    width: 18rem;
+    display: inline-grid;
+    justify-content: center;
+    align-items: center ;
+    background-color: #9dcd88;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+#humidity_level_text
+{
+   
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#water_humidity_info
+{
+    display: inline-grid;
+  font-size: 1.5em;
+    justify-items: anchor-center;
+    align-items: center;
+}
+#lower_right_humidity
+{
+    margin-left: 1.75rem;
+    width: 10rem;
+    display: inline-grid;
+    justify-content: center;
+    background-color: #9dcd88;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperatura</title>
+  <style>
+    body {
+      background-color: #d0eac1; /* cor de fundo parecida com a da imagem */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .temperatura {
+      background-color: #95cc8a; /* cor do quadrado interno */
+      padding: 20px 40px;
+      border-radius: 12px;
+      font-size: 40px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="temperatura">23°</div>
+</body>
+</html>

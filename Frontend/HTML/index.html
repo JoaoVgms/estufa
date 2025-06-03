@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="switch.css">
+    <link rel="stylesheet" href="date.css">
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="bar.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Estufa</title>
+</head>
+<body onload="setup()">
+    <div id="header">
+        <div id="header_date">
+            <p id="contact">Contato: (41)9878689</p>
+            <p id="contact">Email: doceestufa@gmail.com</p>
+        </div>
+        <img id="logo" src="logo.png">
+        <div id="header_interact">
+            <input id="header_data" type="date">
+            <div id="header_switch">
+                <!-- Fica ANTES do <label class="switch"> -->
+<p id="header_switch_text">A</p>
+<label class="switch">
+    <input type="checkbox" id="input_slider">
+    <span class="slider round"></span>
+</label>
+
+                <label class="switch">
+                    <input type="checkbox" id="input_slider">
+                    <span class="slider round"></span>
+                    <button>Liga</button>
+                    <button>Desliga</button>
+                    
+                </label>
+                <script>
+                    function atualizarEstadoDosBotoes() {
+                        const slider   = document.getElementById('input_slider');
+                    
+                        /*  Se o slider NÃO estiver marcado  ->  estamos em Automático (A)
+                            Se o slider estiver marcado      ->  estamos em Manual     (M)   */
+                        const modoAutomatico = !slider.checked;   // inverte o sentido
+                    
+                        // Liga/Desliga dos botões
+                        document.querySelectorAll('.btn-controle')
+                                .forEach(btn => btn.disabled = modoAutomatico);
+                    
+                        // Atualiza a letra A/M na tela
+                        document.getElementById('header_switch_text').textContent =
+                            modoAutomatico ? 'A' : 'M';
+                    }
+                    
+                    /*  Mantém tudo sincronizado: */
+                    window.addEventListener('load',  atualizarEstadoDosBotoes);
+                    document.getElementById('input_slider')
+                            .addEventListener('change', atualizarEstadoDosBotoes);
+                    </script>
+                    
+                
+
+                <p id="header_switch_text">M</p>
+                
+            </div>
+        </div>
+    </div>
+    <hr id="line">
+
+    <div id="page">
+        <div class="page_container" id="upper_page">
+            <div class="box" id="upper_left">
+                <h2 id="upper_left_title">Ventilação</h2>
+                <div id="div_helice">
+                    <img id="helice" src="helice.png">
+                </div>
+                <div id="upper_left_interact">
+                    <button class="button btn-controle" onclick="rotate_helice()">Liga</button>
+                    <button class="button btn-controle" onclick="helice_off()">Desliga</button>
+                    
+              
+                
+
+                </div>
+            </div>
+
+            <div class="box" id="upper_middle">
+                <h2>Servomotor</h2>
+                <div id="upper_middle_image">
+                    <img id="servo" src="servo.png">
+                </div>
+                <div id="upper_middle_interact">
+                    <button class="button btn-controle" onclick="servo_on()">Liga</button>
+                    <button class="button btn-controle" onclick="servo_off()">Desliga</button>
+                    
+                    
+               
+                
+                </div>
+            </div>
+
+            <div class="box" id="upper_right">
+                <div class="temperatura" id="temperatura_interna">
+                    <h2 class="upper_right_title">Temperatura Interna</h2>
+                    <span id="temperatura_valor" class="sensor-data">--°C</span>
+                    <div class="bar" id="outer_bar">
+                        <div class="bar" id="inner_bar_interna">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="temperatura" id="temperatura_externa">
+                    <h2 class="upper_right_title">Temperatura Externa</h2>
+                    <span id="temperatura_valor"class="sensor-data">--°C</span>
+                    <div id="bar_container">
+                        <div class="bar" id="outer_bar">
+                            <div class="bar" id="inner_bar_externa">
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page_container" id="lower_page">
+            <div class="box" id="lower_left">
+                <div id="lower_left_right">
+                    <div id="water_level_text">
+                        <h2>Nível de Água:</h2>
+                    </div>
+                    <div id="water_level_info">
+                        <div id="water_level_container">
+                            <div id="level">
+                                <div id="level_bars">
+                                    <hr id="level_bar_long">
+                                    <hr id="level_bar_short">
+                                    <hr id="level_bar_long">
+                                    <hr id="level_bar_short">
+                                    <hr id="level_bar_long">
+                                    <hr id="level_bar_short">
+                                    <hr id="level_bar_long">
+                                </div>
+                                <div id="level_indicator">
+        
+                                </div>
+                            </div>
+                        </div>
+                        <div id="water_level_percentage"> 
+                            <span id="water_level_percentage" class="sensor-data">--%</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="lower_left_left">
+                    <img src="tanque.png" height="300px">
+                </div>
+            </div>
+
+            <div class="box" id="lower_middle">
+                <h2 id="lower_middle_title">Iluminação</h2>
+                <div id="div_illumination">
+                    <img id="lampada" src="lampada.png">
+                </div>
+                <div id="lower_middle_interact">
+                    <button class="button btn-controle" onclick="rotate_helice()">Liga</button>
+                    <button class="button btn-controle" onclick="helice_off()">Desliga</button>
+                    
+                    
+                
+                
+                </div>
+            </div>
+
+            <div class="box" id="lower_right">
+                <div id="lower_right_left">
+
+                    <div id="humidity_level_text">
+                        <h2>Nível de Umidade:</h2>
+                    </div>
+                    <div id="water_humidity_info">
+                        <span id="water_humidity_percentage" class="sensor-data">--%</span>
+                    </div>
+                    <div id="water_humidity_container">
+                        <div class="bar" id="outer_bar_humidity">
+                            <div class="bar" id="inner_bar_humidity">
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div id="lower_right_right">
+                    <img src="umidade.png" id="umidade" height="240px">
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

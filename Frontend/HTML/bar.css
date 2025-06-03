@@ -1,0 +1,144 @@
+#bar_container
+{
+    display: flex;
+    justify-content: center;
+}
+.bar
+{
+    height: 2rem;
+    width: 20rem;
+    border: none;
+    border-radius: 1rem;
+}
+#outer_bar
+{
+    overflow: hidden;
+    background-color: white;
+}
+
+#inner_bar_interna
+{
+    border-radius: 1.5rem;
+    justify-self:right;
+    background-color: green;
+    margin-right: 20px;
+    transition: all 350ms;
+    /* 0 a 320 */
+}
+#inner_bar_externa
+{
+    border-radius: 1.5rem;
+    justify-self:right;
+    background-color: green;
+    margin-right: 0px;
+    transition: all 350ms;
+    /* 0 a 320 */
+}
+
+#water_level_container
+{
+    padding-left: 1rem;
+    display: inline-grid;
+    align-items: center;
+}
+#outer_level
+{
+    height: 20rem;
+    width: 3rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: white;
+    overflow: hidden;
+}
+#inner_level
+{
+    background-color: #9dcd88;
+    height: 20rem;
+    width: 3rem;
+    border: none;
+    margin-top: 1rem;
+}
+
+#water_level_container
+{
+    justify-content: center;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+}
+#level
+{
+    display: flex;
+    height: 18rem;
+    width: 4rem;
+    border: 5px solid black;
+    overflow: hidden;
+    border-radius: 2.5rem;
+    background-color: white;
+}
+#level_bars
+{
+    z-index: 2;
+    border-radius: 1rem;
+    padding-right: 0.5rem;
+    width: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-evenly;
+}
+#level_bar_short
+{
+    border: none;
+    background-color: black;
+    width: 1rem;
+    margin-block: 1rem;
+    padding: 3px;
+}
+#level_bar_long
+{
+    border: none;
+    background-color: black;
+    width: 2rem;
+    margin-block: 1rem;
+    padding: 3px;
+
+}
+#level_indicator
+{
+    margin-top: 30px;
+    z-index: 1;
+    margin-left: -3rem;
+    background-color: green;
+    width: 4rem;
+    height: 20rem;
+}
+#inner_bar_humidity
+{
+    height: 2rem;
+    width: 18rem;
+    border-radius: 1.5rem;
+    justify-self:right;
+    background-color: green;
+    margin-right: 0px;
+    transition: all 350ms;
+}
+#outer_bar_humidity
+{
+    height: 2rem;
+    width: 18rem;
+    overflow: hidden;
+    background-color: white;
+}
+#water_humidity_percentage
+{
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 3rem;
+    font-size: 35px;
+    border-radius: 1.5rem;
+    background-color: green;
+}

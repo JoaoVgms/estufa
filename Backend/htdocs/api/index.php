@@ -117,6 +117,22 @@ switch ($resource)
                 echo json_encode(["error" => "Método não permitido"]);
         }
         break;
+        case 'logs':
+            require_once __DIR__ . '/logs_functions.php';
+            switch ($method) {
+                case 'GET':
+                    if ($id) {
+                        getLogs($id);
+                    } else {
+                        getAllLogs();
+                    }
+                    break;
+    
+                default:
+                    http_response_code(405);
+                    echo json_encode(["error" => "Método não permitido"]);
+            }
+            break;
     default:
         http_response_code(404);
         echo json_encode(["error" => "Endpoint não encontrado"]);

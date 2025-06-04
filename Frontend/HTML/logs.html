@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="logs.js"></script>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="date.css">
+    <link rel="stylesheet" href="logs.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs da Estufa</title>
+</head>
+<body onload="fetchLatestLogData()">
+    <div id="header">
+        <div id="header_date">
+            <p id="contact">Contato: (41)9878689</p>
+            <p id="contact">Email: doceestufa@gmail.com</p>
+        </div>
+        <img id="logo" src="logo.png">
+        <div id="header_interact">
+            <input id="header_data" type="date" oninput="printdata()">
+        </div>
+    </div>
+    <hr id="line">
+    <div id="info_container">
+        <table id="Tabela_logs">
+            <thead>
+                <th>
+                    ID
+                </th>
+                <th>
+                    SENSOR
+                </th>
+                <th>
+                    VALOR
+                </th>
+                <th>
+                    DATA
+                </th>
+            </thead>
+            <tbody>  
+                <th></th>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

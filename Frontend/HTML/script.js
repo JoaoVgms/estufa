@@ -30,6 +30,22 @@ async function getAllDataManual() {
 
 }
 
+async function getAllDataManual() {
+    let url = "http://localhost:88/api/log/";
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const data = await response.json();
+    } catch (error) {
+        console.error(error.message);
+    }
+
+}
+
 const apiBaseUrl = "http://localhost:88/api/sensors";
 
 async function fetchLatestSensorData() {

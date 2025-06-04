@@ -1,0 +1,15 @@
+#header_data
+{
+    height: 3rem;
+    width: 9rem;
+    border-radius: 2rem;
+    border: none;
+    text-align: center;
+    background-color: #f6e7e7;
+}
+
+#info_container
+{
+    background-color: #9dcd88;
+    height: 30rem;
+}

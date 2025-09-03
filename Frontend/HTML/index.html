@@ -22,44 +22,39 @@
         </div>
         <img id="logo" src="logo.png">
         <div id="header_interact">
-            <input id="header_data" type="date">
+            <button id="header_button" onclick="goto_logs()">Histórico</button>
             <div id="header_switch">
-                <!-- Fica ANTES do <label class="switch"> -->
                 <p id="header_switch_text">A</p>
                 <label class="switch">
                     <input type="checkbox" id="input_slider">
                     <span class="slider round"></span>
                 </label>
 
-                <label class="switch">
-                    <input type="checkbox" id="input_slider">
-                    <span class="slider round"></span>
-                    <button>Liga</button>
-                    <button>Desliga</button>
-                    
-                </label>
                 <script>
                     function atualizarEstadoDosBotoes() {
+                        /*  Mantém tudo sincronizado: */
+                        window.addEventListener('load',  atualizarEstadoDosBotoes);
+                        document.getElementById('input_slider').addEventListener('change', atualizarEstadoDosBotoes);
+
+                        // Inicia com o estado correto
+                        window.onload = atualizarEstadoDosBotoes;
+
+                        // Atualiza sempre que o botão for alterado
+                        document.getElementById('input_slider').addEventListener('change', atualizarEstadoDosBotoes);
                         const slider   = document.getElementById('input_slider');
                     
-                        /*  Se o slider NÃO estiver marcado  ->  estamos em Automático (A)
-                            Se o slider estiver marcado      ->  estamos em Manual     (M)   */
                         const modoAutomatico = !slider.checked;   // inverte o sentido
                     
                         // Liga/Desliga dos botões
                         document.querySelectorAll('.btn-controle')
                                 .forEach(btn => btn.disabled = modoAutomatico);
                     
-                        // Atualiza a letra A/M na tela
-                        document.getElementById('header_switch_text').textContent =
-                            modoAutomatico ? 'A' : 'M';
                     }
                     
                     /*  Mantém tudo sincronizado: */
                     window.addEventListener('load',  atualizarEstadoDosBotoes);
-                    document.getElementById('input_slider')
-                            .addEventListener('change', atualizarEstadoDosBotoes);
-                    </script>
+                    document.getElementById('input_slider').addEventListener('change', atualizarEstadoDosBotoes);
+                </script>
                     
                 
 
@@ -164,12 +159,8 @@
                     <img id="lampada" src="lampada.png">
                 </div>
                 <div id="lower_middle_interact">
-                    <button class="button btn-controle" onclick="rotate_helice()">Liga</button>
-                    <button class="button btn-controle" onclick="helice_off()">Desliga</button>
-                    
-                    
-                
-                
+                    <button class="button btn-controle" onclick="lampada_on()">Liga</button>
+                    <button class="button btn-controle" onclick="lampada_off()">Desliga</button>
                 </div>
             </div>
 

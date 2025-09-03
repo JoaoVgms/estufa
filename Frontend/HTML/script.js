@@ -88,80 +88,6 @@ function updateSensorDisplay(data) {
 document.addEventListener("DOMContentLoaded", fetchLatestSensorData);
 
 
-
-
-async function servo_on() {
-
-    document.getElementById("servo").classList.replace("off", "on");
-    
-    let _data = {
-        controle: "servomotor",
-        atividade: 1
-    }
-      
-    await fetch('http://localhost:88/api/controlemanual/4', {
-    method: "PUT",
-    body: JSON.stringify(_data),
-    headers: { 'Content-Type': 'application/json' }
-    })
-    
-    let data = await getDataManual(4);
-    console.log(data)
-}
-async function servo_off() {
-    document.getElementById("servo").classList.replace("on", "off");
-    
-    let _data = {
-        controle: "servomotor",
-        atividade: 0,
-    }
-      
-    await fetch('http://localhost:88/api/controlemanual/4', {
-    method: "PUT",
-    body: JSON.stringify(_data),
-    headers: { 'Content-Type': 'application/json' }
-    })
-    let data = await getDataManual(4);
-    console.log(data)
-}
-
-async function lampada_on() {
-    document.getElementById("lampada").classList.replace("off", "on");
-    let _lampada_data = {
-        controle: "Lampada",
-        atividade: 1
-    }
-      
-    await fetch('http://localhost:88/api/controlemanual/3', {
-    method: "PUT",
-    body: JSON.stringify(_lampada_data),
-    headers: { 'Content-Type': 'application/json' }
-    })
-    
-    let data = await getDataManual(3);
-    console.log(data)
-}
-async function lampada_off() {
-
-    document.getElementById("lampada").classList.replace("on", "off");
-    let _lampada_data = {
-        controle: "Lampada",
-        atividade: 0
-    }
-      
-    await fetch('http://localhost:88/api/controlemanual/3', {
-    method: "PUT",
-    body: JSON.stringify(_lampada_data),
-    headers: { 'Content-Type': 'application/json' }
-    })
-    
-    let data = await getDataManual(3);
-    console.log(data)
-}
-
-
-
-
 async function setup() {
     document.getElementById("servo").classList.add("off");
     document.getElementById("lampada").classList.add("off");
@@ -176,6 +102,11 @@ const rodarduracao = {
     duration: 800,
     iterations: Infinity,
 };
+
+function goto_logs()
+{
+    window.location.href("./logs.html");
+}
 
 let animacao = null;
 
@@ -218,40 +149,75 @@ async function helice_off() {
     console.log(data)
 }
 
-
-    function atualizarEstadoDosBotoes() {
-        const modoAutomatico = document.getElementById('input_slider').checked;
-        const botoes = document.querySelectorAll('.btn-controle');
-
-        // Atualiza o texto do modo
-        const textoModo = document.getElementById('header_switch_text');
-        textoModo.textContent = modoAutomatico ? 'A' : 'M';
-
-        // Habilita ou desabilita os botões
-        botoes.forEach(botao => {
-            botao.disabled = modoAutomatico;
-        });
+async function lampada_on() {
+    document.getElementById("lampada").classList.replace("off", "on");
+    let _lampada_data = {
+        controle: "Lampada",
+        atividade: 1
     }
-
-    // Inicia com o estado correto
-    window.onload = atualizarEstadoDosBotoes;
-
-    // Atualiza sempre que o botão for alterado
-    document.getElementById('input_slider').addEventListener('change', atualizarEstadoDosBotoes);
-
-    function servo_on() {
-        document.getElementById("servo").style.transform = "rotate(90deg)";
-    }
+      
+    await fetch('http://localhost:88/api/controlemanual/3', {
+    method: "PUT",
+    body: JSON.stringify(_lampada_data),
+    headers: { 'Content-Type': 'application/json' }
+    })
     
-    function servo_off() {
-        document.getElementById("servo").style.transform = "rotate(0deg)";
+    let data = await getDataManual(3);
+    console.log(data)
+}
+async function lampada_off() {
+
+    document.getElementById("lampada").classList.replace("on", "off");
+    let _lampada_data = {
+        controle: "Lampada",
+        atividade: 0
     }
+      
+    await fetch('http://localhost:88/api/controlemanual/3', {
+    method: "PUT",
+    body: JSON.stringify(_lampada_data),
+    headers: { 'Content-Type': 'application/json' }
+    })
     
-    function lampada_on() {
-        document.getElementById("lampada").style.filter = "brightness(200%)";
-    }
+    let data = await getDataManual(3);
+    console.log(data)
+}
+
+
+async function servo_on() {
+
+    document.getElementById("servo").classList.replace("off", "on");
     
-    function lampada_off() {
-        document.getElementById("lampada").style.filter = "brightness(50%)";
+    let _data = {
+        controle: "servomotor",
+        atividade: 1
     }
+      
+    await fetch('http://localhost:88/api/controlemanual/4', {
+    method: "PUT",
+    body: JSON.stringify(_data),
+    headers: { 'Content-Type': 'application/json' }
+    })
+    
+    let data = await getDataManual(4);
+    console.log(data)
+}
+async function servo_off() {
+    document.getElementById("servo").classList.replace("on", "off");
+    
+    let _data = {
+        controle: "servomotor",
+        atividade: 0,
+    }
+      
+    await fetch('http://localhost:88/api/controlemanual/4', {
+    method: "PUT",
+    body: JSON.stringify(_data),
+    headers: { 'Content-Type': 'application/json' }
+    })
+    let data = await getDataManual(4);
+    console.log(data)
+}
+
+
     

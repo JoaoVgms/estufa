@@ -57,3 +57,8 @@ async function getLogsData(data) {
         console.error(error.message);
     }
 }
+
+function goto_index()
+{
+    window.location.replace("./index.html");
+}

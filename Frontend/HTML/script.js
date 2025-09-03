@@ -105,8 +105,9 @@ const rodarduracao = {
 
 function goto_logs()
 {
-    window.location.href("./logs.html");
+    window.location.replace("./logs.html");
 }
+
 
 let animacao = null;
 

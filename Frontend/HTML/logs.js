@@ -13,7 +13,17 @@ async function fetchLatestLogData() {
     }
 }
 
+deleteLogsDisplay()
 LogsArray = []
+
+function deleteLogsDisplay()
+{
+    for (let i = 0; i < 1; i++)
+    {
+            table = document.getElementById("Tabela_logs");
+            table.row.deleteRow(-1);
+    }
+}
 
 function updateLogsDisplay(data) {
     count = Object.keys(data).length
@@ -29,7 +39,14 @@ function updateLogsDisplay(data) {
             var cell4 = row.insertCell(3);
             cell1.innerHTML = data[i].log_id;
             cell2.innerHTML = data[i].tipo_sensor;
-            cell3.innerHTML = data[i].valor;
+            if (data[i].tipo_sensor == 'Temperatura interna' || data[i].tipo_sensor == 'Temperatura externa')
+            {
+                cell3.innerHTML = data[i].valor + "°C";
+            }
+            else
+            {
+                cell3.innerHTML = data[i].valor + "%";
+            }
             cell4.innerHTML = data[i].data_log;
             LogsArray.push(data[i].log_id)
         }
@@ -51,12 +68,14 @@ async function getLogsData(data) {
         }
 
         const data = await response.json();
-        console.log(data);
+        updateLogsDisplay(data);
         return data;
     } catch (error) {
         console.error(error.message);
     }
 }
+
+
 
 function goto_index()
 {

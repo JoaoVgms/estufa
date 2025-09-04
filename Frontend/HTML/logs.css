@@ -13,3 +13,17 @@
     background-color: #9dcd88;
     height: 30rem;
 }
+#Tabela_logs
+{
+    width: 30%;
+    background-color: #d0e9c0;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    text-align: center;
+}
+thead
+{
+    background-color: #9dcd88;
+    border-radius: 0.25rem;
+}

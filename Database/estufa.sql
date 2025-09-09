@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/09/2025 às 16:25
+-- Tempo de geração: 09/09/2025 às 15:51
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -62,11 +62,11 @@ CREATE TABLE `sensors` (
 --
 
 INSERT INTO `sensors` (`id`, `tipo_sensor`, `valor`, `data_atualizada`) VALUES
-(1, 'Temperatura interna', 54, '2025-03-06'),
-(2, 'Temperatura externa', 25, '2025-03-17'),
-(3, 'Umidade do solo', 24, '2025-05-01'),
-(4, 'Luminosidade', 67, '2025-02-10'),
-(5, 'tanque d agua', 63, '2025-04-20');
+(1, 'Temperatura interna', 58, '2025-03-06'),
+(2, 'Temperatura externa', 27, '2025-03-17'),
+(3, 'Umidade do solo', 26, '2025-05-01'),
+(4, 'Luminosidade', 69, '2025-02-10'),
+(5, 'tanque d agua', 65, '2025-04-20');
 
 --
 -- Acionadores `sensors`
@@ -95,7 +95,7 @@ CREATE TABLE `sensors_log` (
   `tipo_sensor` varchar(50) DEFAULT NULL,
   `valor` int(11) DEFAULT NULL,
   `data_atualizada` date DEFAULT NULL,
-  `data_log` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_log` date NOT NULL DEFAULT current_timestamp(),
   `operacao` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -104,18 +104,30 @@ CREATE TABLE `sensors_log` (
 --
 
 INSERT INTO `sensors_log` (`log_id`, `sensor_id`, `tipo_sensor`, `valor`, `data_atualizada`, `data_log`, `operacao`) VALUES
-(1, 1, 'Temperatura interna', 55, '2025-03-06', '2025-09-03 13:40:38', 'UPDATE'),
-(2, 1, 'Temperatura interna', 58, '2025-03-06', '2025-09-03 13:40:56', 'UPDATE'),
-(3, 2, 'Temperatura externa', 22, '2025-03-17', '2025-09-03 13:41:01', 'UPDATE'),
-(4, 1, 'Temperatura interna', 90, '2025-03-06', '2025-09-03 14:24:50', 'UPDATE'),
-(5, 1, 'Temperatura interna', 80, '2025-03-06', '2025-09-03 14:24:53', 'UPDATE'),
-(6, 1, 'Temperatura interna', 51, '2025-03-06', '2025-09-03 14:24:57', 'UPDATE'),
-(7, 1, 'Temperatura interna', 52, '2025-03-06', '2025-09-03 14:25:00', 'UPDATE'),
-(8, 1, 'Temperatura interna', 53, '2025-03-06', '2025-09-03 14:25:03', 'UPDATE'),
-(9, 2, 'Temperatura externa', 23, '2025-03-17', '2025-09-03 14:25:05', 'UPDATE'),
-(10, 3, 'Umidade do solo', 33, '2025-05-01', '2025-09-03 14:25:08', 'UPDATE'),
-(11, 3, 'Umidade do solo', 3334, '2025-05-01', '2025-09-03 14:25:13', 'UPDATE'),
-(12, 4, 'Luminosidade', 60, '2025-02-10', '2025-09-03 14:25:15', 'UPDATE');
+(1, 1, 'Temperatura interna', 55, '2025-03-06', '2025-09-03', 'UPDATE'),
+(2, 1, 'Temperatura interna', 58, '2025-03-06', '2025-09-03', 'UPDATE'),
+(3, 2, 'Temperatura externa', 22, '2025-03-17', '2025-09-03', 'UPDATE'),
+(4, 1, 'Temperatura interna', 90, '2025-03-06', '2025-09-03', 'UPDATE'),
+(5, 1, 'Temperatura interna', 80, '2025-03-06', '2025-09-03', 'UPDATE'),
+(6, 1, 'Temperatura interna', 51, '2025-03-06', '2025-09-03', 'UPDATE'),
+(7, 1, 'Temperatura interna', 52, '2025-03-06', '2025-09-03', 'UPDATE'),
+(8, 1, 'Temperatura interna', 53, '2025-03-06', '2025-09-03', 'UPDATE'),
+(9, 2, 'Temperatura externa', 23, '2025-03-17', '2025-09-03', 'UPDATE'),
+(10, 3, 'Umidade do solo', 33, '2025-05-01', '2025-09-03', 'UPDATE'),
+(11, 3, 'Umidade do solo', 3334, '2025-05-01', '2025-09-03', 'UPDATE'),
+(12, 4, 'Luminosidade', 60, '2025-02-10', '2025-09-03', 'UPDATE'),
+(13, 1, 'Temperatura interna', 54, '2025-03-06', '2025-09-09', 'UPDATE'),
+(14, 1, 'Temperatura interna', 55, '2025-03-06', '2025-09-09', 'UPDATE'),
+(15, 1, 'Temperatura interna', 56, '2025-03-06', '2025-09-09', 'UPDATE'),
+(16, 2, 'Temperatura externa', 25, '2025-03-17', '2025-09-09', 'UPDATE'),
+(17, 3, 'Umidade do solo', 24, '2025-05-01', '2025-09-09', 'UPDATE'),
+(18, 4, 'Luminosidade', 67, '2025-02-10', '2025-09-09', 'UPDATE'),
+(19, 5, 'tanque d agua', 63, '2025-04-20', '2025-09-09', 'UPDATE'),
+(20, 1, 'Temperatura interna', 57, '2025-03-06', '2025-09-09', 'UPDATE'),
+(21, 2, 'Temperatura externa', 26, '2025-03-17', '2025-09-09', 'UPDATE'),
+(22, 3, 'Umidade do solo', 25, '2025-05-01', '2025-09-09', 'UPDATE'),
+(23, 4, 'Luminosidade', 68, '2025-02-10', '2025-09-09', 'UPDATE'),
+(24, 5, 'tanque d agua', 64, '2025-04-20', '2025-09-09', 'UPDATE');
 
 --
 -- Índices para tabelas despejadas
@@ -159,7 +171,7 @@ ALTER TABLE `sensors`
 -- AUTO_INCREMENT de tabela `sensors_log`
 --
 ALTER TABLE `sensors_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

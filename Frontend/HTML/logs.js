@@ -1,5 +1,3 @@
-setInterval(fetchLatestLogData, 1000);
-
 async function fetchLatestLogData() {
     try {
         const response = await fetch('http://localhost:88/api/logs');
@@ -7,26 +5,23 @@ async function fetchLatestLogData() {
             throw new Error(`Erro ao buscar dados: ${response.status}`);
         }
         const data = await response.json();
+        mensagem_erro = document.getElementById("mensagemErro");
+        mensagem_erro.style.display = 'none';
         updateLogsDisplay(data);
     } catch (error) {
         console.error("Erro ao buscar os dados mais recentes:", error);
+        mensagem_erro = document.getElementById("mensagemErro");
+        mensagem_erro.style.display = 'flex';
     }
 }
 
-deleteLogsDisplay()
 LogsArray = []
 
-function deleteLogsDisplay()
-{
-    for (let i = 0; i < 1; i++)
-    {
-            table = document.getElementById("Tabela_logs");
-            table.row.deleteRow(-1);
-    }
-}
-
 function updateLogsDisplay(data) {
+    deleteLogs();
     count = Object.keys(data).length
+    tabela = document.getElementById("Tabela_logs");
+    tabela.style.display = 'table';
     for (let i = 0; i < count; i++)
     {
         if(!LogsArray.includes(data[i].log_id))
@@ -52,6 +47,15 @@ function updateLogsDisplay(data) {
         }
     }
 }
+function deleteLogs()
+{
+    tabela = document.getElementById("Tabela_logs");
+    linhas = tabela.rows.length
+    for(i = 1; i<linhas; i++)
+    {
+        tabela.deleteRow(-1);
+    }
+}
 function printdata()
 {
     date = document.getElementById('header_data');
@@ -62,15 +66,24 @@ function printdata()
 async function getLogsData(data) {
     let url = "http://localhost:88/api/logs/" + data;
     try {
+        mensagem_erro = document.getElementById("mensagemErro");
+        mensagem_erro.style.display = 'none';
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
-
+        mensagem_erro = document.getElementById("mensagemErro");
+        mensagem_erro.style.display = 'none';
         const data = await response.json();
+        LogsArray = []
         updateLogsDisplay(data);
         return data;
     } catch (error) {
+        deleteLogs()
+        tabela = document.getElementById("Tabela_logs");
+        tabela.style.display = 'none';
+        mensagem_erro = document.getElementById("mensagemErro");
+        mensagem_erro.style.display = 'flex';
         console.error(error.message);
     }
 }

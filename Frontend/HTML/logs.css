@@ -1,3 +1,12 @@
+html{
+    scrollbar-color: green #9dcd88;
+    scrollbar-width: none;
+}
+body{
+    background-color: #9dcd88;
+    align-items: center;
+    justify-content: center;
+}
 #header_data
 {
     height: 3rem;
@@ -6,24 +15,48 @@
     border: none;
     text-align: center;
     background-color: #f6e7e7;
+    margin-inline: 1rem;
+    margin-right: 1.5rem;
 }
 
 #info_container
 {
     background-color: #9dcd88;
-    height: 30rem;
+    display: flex;
+    justify-content: center;
 }
 #Tabela_logs
 {
-    width: 30%;
+    margin-top: 3rem;
+    width: auto;
     background-color: #d0e9c0;
     border-radius: 1rem;
     padding: 1rem;
     padding-top: 0.5rem;
     text-align: center;
 }
-thead
+.title
 {
+    margin-inline: 0.5rem;
     background-color: #9dcd88;
+    padding-inline: 1rem;
     border-radius: 0.25rem;
+}
+td{
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+th{
+    margin: 0.5rem;
+}
+#mensagemErro
+{
+    background-color: #d0e9c0;
+    width: 25rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    justify-self: center;
+    margin-top: 3rem;
+    text-align: center;
+    justify-content: center;
 }

@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$port = '3306'; // Porta correta
+$port = '3307'; // Porta correta
 $db   = 'estufa';
 $user = 'root';
 $pass = ''; // Deixe vazio se não houver senha
